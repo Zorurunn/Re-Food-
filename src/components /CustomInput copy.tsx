@@ -1,5 +1,5 @@
 "use client";
-import { Search, VisibilityOff, Visibility } from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   IconButton,
   InputAdornment,
@@ -9,35 +9,18 @@ import {
 } from "@mui/material";
 import { ChangeEventHandler, HTMLInputTypeAttribute, useState } from "react";
 type CustomInputProps = {
-  label?: string;
+  label: string;
   value: string;
   placeHolder: string;
   type: HTMLInputTypeAttribute;
   handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
-  adornment?: "end" | "start";
-  size?: "small" | "medium";
-  width: number;
-  borderColor?: string;
 };
 
 export const CustomInput = (props: CustomInputProps) => {
-  const {
-    value,
-    label,
-    handleChange,
-    type = "text",
-    placeHolder,
-    adornment,
-    size,
-    width,
-    borderColor,
-  } = props;
+  const { value, label, handleChange, type = "text", placeHolder } = props;
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-  const handleSearch = () => {
     setShowPassword((prev) => !prev);
   };
   return (
@@ -49,31 +32,20 @@ export const CustomInput = (props: CustomInputProps) => {
         placeholder={placeHolder}
         type={type === "password" && showPassword ? "text" : type}
         sx={{
-          "& fieldset": {
-            borderColor: borderColor,
-          },
-          width: width,
-          backgroundColor: "transparent",
+          bgcolor: "#ecedf0",
+          width: 400,
         }}
         inputProps={{
           style: {
-            padding: size === "small" ? "3px 8px" : "14px 16px",
+            padding: "14px 16px",
           },
         }}
         InputProps={{
-          style: {
-            borderColor: "red",
-          },
-          endAdornment: adornment === "end" && (
+          endAdornment: type === "password" && (
             <InputAdornment position="end">
               <IconButton onClick={handleShowPassword}>
                 {showPassword ? <VisibilityOff /> : <Visibility />}
               </IconButton>
-            </InputAdornment>
-          ),
-          startAdornment: adornment === "start" && (
-            <InputAdornment position="start">
-              <IconButton onClick={handleSearch}>{<Search />}</IconButton>
             </InputAdornment>
           ),
         }}

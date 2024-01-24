@@ -29,7 +29,9 @@ export const Login = () => {
               placeHolder="Имэйл хаягаа оруулна уу"
               value={email}
               handleChange={handleEmail}
+              size="medium"
               type="text"
+              width={400}
             />
             <Stack alignItems="flex-end">
               <CustomInput
@@ -38,6 +40,9 @@ export const Login = () => {
                 value={password}
                 handleChange={handlePassword}
                 type="password"
+                adornment="end"
+                size="medium"
+                width={400}
               />
               <Button>
                 <Typography

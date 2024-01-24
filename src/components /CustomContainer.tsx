@@ -7,9 +7,5 @@ type CustomContainerProps = {
 };
 export const CustomContainer = (props: CustomContainerProps) => {
   const { maxWidth, children } = props;
-  return (
-    <Container maxWidth={`${maxWidth}`} sx={{ border: "2px solid gray" }}>
-      {children}
-    </Container>
-  );
+  return <Container maxWidth={`${maxWidth}`}>{children}</Container>;
 };
