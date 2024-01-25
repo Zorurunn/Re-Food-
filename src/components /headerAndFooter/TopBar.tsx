@@ -3,8 +3,10 @@ import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Button, Stack, Typography } from "@mui/material";
-import { CustomContainer, CustomInput } from ".";
+import { CustomContainer, CustomInput, State } from "..";
 import { ChangeEvent, useState } from "react";
+import { Notify } from "../notfication/ Notify";
+import { Test } from "../notfication/Test";
 type CustomButtonProps = {
   title: string;
   width: string;
@@ -21,6 +23,7 @@ export const TopBar = () => {
     event.preventDefault();
     setSearchVal(event.target.value);
   };
+
   return (
     <CustomContainer maxWidth="lg">
       <Stack
@@ -59,6 +62,9 @@ export const TopBar = () => {
           </Stack>
         </Stack>
       </Stack>
+      {/* {Test()} */}
+      {/* <Notify message="Амжилттай бүртгэгдлээ." color="primary.main" /> */}
+      {/* <State /> */}
     </CustomContainer>
   );
 };

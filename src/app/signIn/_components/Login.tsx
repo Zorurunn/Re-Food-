@@ -1,4 +1,4 @@
-import { CustomButton, CustomInput } from "@/components ";
+import { CustomButton, CustomInput, HeadText } from "@/components ";
 import { Button, Stack, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 
@@ -20,8 +20,9 @@ export const Login = () => {
   };
 
   return (
-    <div>
-      <form>
+    <Stack>
+      <Stack alignItems={"center"} justifyContent={"center"}>
+        <HeadText text={"Нэвтрэх"} size="28px" wieght="700" />
         <Stack gap={9}>
           <Stack gap={2}>
             <CustomInput
@@ -80,7 +81,7 @@ export const Login = () => {
             </Button>
           </Stack>
         </Stack>
-      </form>
-    </div>
+      </Stack>
+    </Stack>
   );
 };

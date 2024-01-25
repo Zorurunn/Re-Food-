@@ -9,7 +9,7 @@ export default function Home() {
     <div
       className="cursor-pointer"
       onClick={() => {
-        router.push("/home");
+        router.push("/signIn");
       }}
     >
       go home

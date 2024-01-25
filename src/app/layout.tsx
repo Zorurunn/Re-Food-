@@ -17,14 +17,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={inter.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Stack minHeight="100vh">
+            <Stack minHeight="100vh" width={"100%"} position={"relative"}>
               <TopBar />
-              <Stack>{children}</Stack>
-              <ToastContainer />
+              <Stack flex={1}>{children}</Stack>
               <Footer />
             </Stack>
           </ThemeProvider>
           <CssBaseline />
+          <ToastContainer />
         </AppRouterCacheProvider>
       </body>
     </html>
