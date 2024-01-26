@@ -1,8 +1,9 @@
-import { CustomButton, CustomInput, HeadText } from "@/components ";
-import { Button, Stack, Typography } from "@mui/material";
+import { CustomInput, HeadText } from "@/components ";
+import { Avatar, Button, Stack, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
-
-export const Login = () => {
+import EditIcon from "@mui/icons-material/Edit";
+import { Edit } from "@mui/icons-material";
+export const Profile = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,6 +23,29 @@ export const Login = () => {
   return (
     <Stack>
       <Stack alignItems={"center"} justifyContent={"center"}>
+        <Stack>
+          <Avatar
+            alt="Remy Sharp"
+            src="/temporary/morning.jpg"
+            sx={{ width: "120px", height: "120px" }}
+          />
+          <Stack
+            width={40}
+            height={40}
+            border="1px solid"
+            borderColor="text.secondary"
+            borderRadius={10}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Edit
+              sx={{
+                fontSize: 24,
+                color: "primary.main",
+              }}
+            />
+          </Stack>
+        </Stack>
         <HeadText text={"Нэвтрэх"} size="28px" wieght="700" />
         <Stack gap={9}>
           <Stack gap={2}>

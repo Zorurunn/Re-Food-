@@ -1,19 +1,20 @@
 "use client";
-import { CustomInput } from "@/components ";
+import { AbsContCenter, AbsContRight, CustomInput, Login } from "@/components ";
+import { FoodDetail } from "@/components /orderDetail/FoodDetail";
+import { MyCart } from "@/components /orderDetail/MyCart";
+import { NotFound } from "@/components /search/NotFound";
+import { Stack } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 export default function Home() {
   const router = useRouter();
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => {
-        router.push("/signIn");
-      }}
-    >
-      go home
-    </div>
+    <Stack flex={1}>
+      <MyCart />
+      {/* <FoodDetail /> */}
+      {/* <NotFound /> */}
+    </Stack>
   );
 }
 
